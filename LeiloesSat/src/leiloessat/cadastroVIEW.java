@@ -145,27 +145,33 @@ public class cadastroVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroNomeActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-         ProdutosDTO produto = new ProdutosDTO();
-        String nome = cadastroNome.getText();
-        String valor = cadastroValor.getText();
-        String status = "A Venda";
-        String sucesso = "O produto foi cadastrado com sucesso";
-        String erro = "O produto não pode ser cadastrado! Tente novamente.";
+     
+        
+      ProdutosDTO produto = new ProdutosDTO();
+    String nome = cadastroNome.getText();
+    String valor = cadastroValor.getText();
+    String status = "A Venda";
+    String sucesso = "O produto foi cadastrado com sucesso";
+    String erro = "O produto não pode ser cadastrado! Tente novamente.";
+
+    // Verifica se os campos estão vazios
+    if (nome.isEmpty() || valor.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos antes de cadastrar.", "Aviso",
+                JOptionPane.WARNING_MESSAGE);
+    } else {
         produto.setNome(nome);
         produto.setValor(Integer.valueOf(valor));
         produto.setStatus(status);
         
         ProdutosDAO produtodao = new ProdutosDAO();
         
-       try{
-           produtodao.cadastrarProduto(produto);
-           JOptionPane.showMessageDialog(null, sucesso);
-           
-       }catch(Exception e){
-           JOptionPane.showMessageDialog(null, erro);
-       }
-        
-  
+        try {
+            produtodao.cadastrarProduto(produto);
+            JOptionPane.showMessageDialog(null, sucesso);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, erro);
+        }
+    }
         
     
         
