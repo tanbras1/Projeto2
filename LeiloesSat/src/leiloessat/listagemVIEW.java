@@ -149,7 +149,7 @@ public class listagemVIEW extends javax.swing.JFrame {
        
        String input = id_produto_venda.getText();
        // Integer id = Integer.valueOf(id_produto_venda.getText());
-        String sucesso = "O produto foi cadastrado com sucesso";
+        String sucesso = "O produto foi vendido com sucesso";
         String idInvalido = "Digite um Id";
         String jaVendido = "O produto já está vendido. Por favor, digite um ID de um produto que não foi vendido.";
         
