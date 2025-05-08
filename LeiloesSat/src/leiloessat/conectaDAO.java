@@ -26,8 +26,8 @@ public class conectaDAO {
    public String url = "jdbc:mysql://localhost:3306/LeiloesSat?serverTimezone=America/Sao_Paulo";
 //?useSSL=true&verifyServerCertificate=true
  //Nome da base de dados
-    public String user = "root"; //nome do usuário do MySQL
-    public String password = "258914m-"; //senha do MySQL 
+    public String user = "adm"; //nome do usuário do MySQL
+    public String password = "admforte"; //senha do MySQL 
 
     public Connection getConn() {
         return conn;
